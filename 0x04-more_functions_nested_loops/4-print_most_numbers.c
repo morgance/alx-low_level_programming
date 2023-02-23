@@ -1,4 +1,4 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
   * print_most_numbers - Print the numbers since 0 up to 9
@@ -9,17 +9,19 @@
   */
 void print_most_numbers(void)
 {
-	int c;
+	int x = 0;
 
-	c = 0;
-	while (c < 10)
+	for (; x <= 9; x++)
 	{
-	if (c != 2 && c != 4)
-	}
-	_putchar (c + '0');
-	{
-		c++;
+		if (x == 2 || x == 4)
+		{
+			continue;
+		}
+		else
+		{
+			_putchar(x + '0');
+		}
 	}
 
-	_putchar ('\n');
+	_putchar('\n');
 }
