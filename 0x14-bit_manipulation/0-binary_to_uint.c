@@ -11,7 +11,7 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int i;
 	int prim, rim;
 
-	if (b == NULL)
+	if (!b)
 		return (NULL);
 
 	i = 0;
