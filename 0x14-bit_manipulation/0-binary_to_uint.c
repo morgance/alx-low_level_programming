@@ -13,7 +13,8 @@ unsigned int binary_to_uint(const char *b)
 	int prim, rim;
 
 	if (!b)
-		return (NULL);
+		return (0);
+
 
 	i = 0;
 	for (prim = 0; b[prim] != '\0'; prim++)
