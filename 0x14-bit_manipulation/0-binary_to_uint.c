@@ -13,13 +13,13 @@ unsigned int binary_to_uint(const char *b)
 	int prim, rim;
 
 	if (!b)
-		return (0);
+		return (NULL);
 
 	i = 0;
-	for (prime = 0; b[prime] != '\0'; prime++)
+	for (prim = 0; b[prim] != '\0'; prim++)
 		;
 
-	for (prime--, rim = 1; prime >= 0; prime--, rim *= 2)
+	for (prim--, rim = 1; prim >= 0; prim--, rim *= 2)
 	{
 		if (b[prim] != '0' && b[prim] != '1')
 		{
