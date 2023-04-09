@@ -19,4 +19,3 @@ void print_binary(unsigned long int n)
 		_putchar('0');
 	}
 }
-				
