@@ -5,7 +5,7 @@
  * @n:the bit
  * @index:where the bit is taken
  *
- * Return:1 if it works or -1 if unsuccesful 
+ * Return:1 if it works or -1 if unsuccesful
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
