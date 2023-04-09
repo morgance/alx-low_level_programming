@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * get_bit - returns the value of bit at given index
  * @n:long int
