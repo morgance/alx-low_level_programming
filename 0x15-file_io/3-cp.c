@@ -8,8 +8,8 @@
  */
 int main(int argc, char *argv[])
 {
-	int file_from, file_to, error;
-	ssize_t prim, pro;
+	int file_from, file_to;
+	ssize_t prim, pro, error;
 	char ptr[1024];
 
 	if (argc != 3)
