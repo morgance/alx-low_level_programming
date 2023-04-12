@@ -46,6 +46,8 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 	}
+	free(ptr);
+
 	error = close(file_from);
 	if (error == -1)
 	{
