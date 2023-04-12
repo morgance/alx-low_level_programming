@@ -6,7 +6,7 @@
  *
  * Return:0
  */
-int main(int argc, char **argv[])
+int main(int argc, char **argv)
 {
 	int file_from, file_to;
 	ssize_t prim, pro, error;
@@ -34,8 +34,6 @@ int main(int argc, char **argv[])
 	if (prim == 1024)
 	{
 		prim = read(file_from, ptr, 1024);
-		
-
 		if (prim == -1)
 		{
 			 dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
