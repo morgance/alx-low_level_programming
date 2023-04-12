@@ -34,13 +34,14 @@ int main(int argc, char *argv[])
 	if (prim == 1024)
 	{
 		prim = read(file_from, ptr, 1024);
-		pro = write(file_to, ptr, prim);
+		
 
 		if (prim == -1)
 		{
 			 dprintf(STDERR_FILENO, "Error: Cant read from file %s\n", argv[1]);
 			 exit(98);
 		}
+		pro = write(file_to, ptr, prim);
 		if (pro == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Cant write to %s\n", argv[2]);
