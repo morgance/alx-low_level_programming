@@ -1,15 +1,15 @@
 #include "main.h"
 /**
- * main -copy files from file_from to file_to
+ * main - copy files from file_from to file_to
  * @argc:number of arguments
  * @argv:array of arguments the function takes
  *
  * Return:0
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	int file_from, file_to, error;
-	ssize_t prim, pro;
+	int file_from, file_to;
+	ssize_t prim, pro, error;
 	char ptr[1024];
 
 	if (argc != 3)
