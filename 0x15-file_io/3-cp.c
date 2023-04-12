@@ -1,12 +1,12 @@
 #include "main.h"
 /**
- * main -copy files
+ * main -copy files from file_from to file_to
  * @argc:number of arguments
- * @argv:array of arguments
+ * @argv:array of arguments the function takes
  *
  * Return:0
  */
-int main(int argc, char *argv[])
+int main(int argc, char **argv[])
 {
 	int file_from, file_to;
 	ssize_t prim, pro, error;
@@ -31,33 +31,33 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 	prim = 1024;
-	while (prim == 1024)
+	if (prim == 1024)
 	{
 		prim = read(file_from, ptr, 1024);
+		pro = write(file_to, ptr, prim);
+
 		if (prim == -1)
 		{
 			 dprintf(STDERR_FILENO, "Error: Cant read from file %s\n", argv[1]);
 			 exit(98);
 		}
-		pro = write(file_to, ptr, prim);
 		if (pro == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Cant write to %s\n", argv[2]);
 			exit(99);
 		}
 	}
-		error = close(file_from);
-		if (error == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Cant close fd %d\n", file_from);
-			exit(100);
-		}
-		error =  close(file_to);
-		if (error == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Cant close fd %d\n", file_to);
-			exit(100);
-		}
-
-		return (0);
+	error = close(file_from);
+	if (error == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Cant close fd %d\n", file_from);
+		exit(100);
+	}
+	error =  close(file_to);
+	if (error == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Cant close fd %d\n", file_to);
+		exit(100);
+	}
+	return (0);
 }
