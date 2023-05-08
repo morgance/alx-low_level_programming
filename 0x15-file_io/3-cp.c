@@ -12,12 +12,12 @@ void open_files(int file_from, int file_to, char *argv[])
 {
 	if (file_from == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: cant read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	if (file_to == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: cant write to %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 }
@@ -41,8 +41,9 @@ int main(int argc, char *argv[])
 	}
 
 	file_from = open(argv[1], O_RDONLY);
+	open_files(file_from, -1, argv[1]);
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
-	open_files(file_from, file_to, argv);
+	open_files(file_to, -1, argv[2]);
 
 	prim = 1024;
 	while (prim == 1024)
@@ -58,14 +59,14 @@ int main(int argc, char *argv[])
 	error = close(file_from);
 	if (error == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: cant close fd %d\n", file_from);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
 		exit(100);
 	}
 
 	error = close(file_to);
 	if (error == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: cant close fd %d\n", file_to);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
 		exit(100);
 	}
 
