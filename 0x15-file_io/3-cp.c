@@ -40,9 +40,8 @@ int main(int argc, char *argv[])
 	}
 
 	file_from = open(argv[1], O_RDONLY);
-	open_files(file_from, -1, argv);
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
-	open_files(file_to, -1, argv);
+	open_files(file_from, file_to, argv);
 
 	prim = 1024;
 	while (prim == 1024)
