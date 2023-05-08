@@ -17,7 +17,7 @@ void open_files(int file_from, int file_to, char *argv[])
 	}
 	if (file_to == -1)
 	{
-		dorintf(STDERR_FILENO, "Error: cant write to %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: cant write to %s\n", argv[2]);
 		exit(99);
 	}
 }
