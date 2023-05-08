@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * open_files - checks files if they can be opened
  * @file_from: files_from
@@ -69,6 +68,5 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
 		exit(100);
 	}
-
 	return (0);
 }
