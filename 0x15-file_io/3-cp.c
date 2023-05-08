@@ -1,7 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-
-void open_files(int file_from, int file_to, char *argv[]);
 
 /**
  * open_files - checks files if they can be opened
