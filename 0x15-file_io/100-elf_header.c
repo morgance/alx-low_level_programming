@@ -5,6 +5,17 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/stat.h>
+
+void elf_addr(char *dest);
+void elf_type(char *dest);
+void elf_osabi(char *dest);
+void elf_version(char *dest);
+void elf_data(char *dest);
+void elf_magic(char *dest);
+void elf_sys(char *dest);
+int elf_checks(char *dest);
+int main(int argc, char *argv[]);
+
 /**
  * elf_addr - prints the address
  * @dest: magic
