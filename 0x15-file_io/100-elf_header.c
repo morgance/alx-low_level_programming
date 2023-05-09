@@ -1,6 +1,6 @@
 #include <elf.h>
-#include <stdio>
-#include <stdlib>
+#include <stdio.h>
+#include <stdlib.h>
 #include <sys/types.h>
 #include <unistd.h>
 #include <fcntl.h>
@@ -32,7 +32,7 @@ void elf_addr(char *dest)
 	if (pro == '1')
 	{
 		strt = 26;
-		printf('80');
+		printf("80");
 		for (i = strt; i >= 22; i--)
 		{
 			if (dest[i] == 0)
@@ -54,7 +54,6 @@ void elf_addr(char *dest)
 				printf("%02x", 256 + dest[i]);
 		}
 	}
-	return ("\n");
 }
 /**
  * elf_type- prints the type
@@ -112,7 +111,7 @@ void elf_osabi(char *dest)
 			printf("<unknown: %x>\n", eosabi);
 	}
 
-	print(" ABI Version:          %d\n", dest[8]);
+	printf(" ABI Version:          %d\n", dest[8]);
 }
 /**
  * elf_version - print the version information of an ELF file
