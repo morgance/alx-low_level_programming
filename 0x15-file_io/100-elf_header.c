@@ -121,14 +121,13 @@ void elf_osabi(char *dest)
  */
 void elf_version(char *dest)
 {
-	int vers = dest[6];
 
-	printf("Version: %d", vers);
+	printf(" %-34s %u", "Version:", dest[EI_VERSION]);
 
-	if (vers == EV_CURRENT)
+	if (dest[EI_VERSION] == EV_CURRENT)
 		printf("(Current)");
-
-	printf("\n");
+	else
+		printf("\n");
 }
 /**
  * elf_data - print the data of an elf
